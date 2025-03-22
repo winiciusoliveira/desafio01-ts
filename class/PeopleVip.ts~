@@ -1,0 +1,23 @@
+import { DioAccount } from "./DioAccount";
+
+class PeopleVip extends DioAccount {
+    constructor(readonly name: string, readonly accountNumber: number) {
+        super(name, accountNumber);
+    }
+
+    deposit = (value: number, additional?: number): void => {
+        const user_balance: number = this.getBalance();
+
+        if (this.validateStatus()) {
+            if (user_balance > 0) {
+                if (additional) {
+                    this.setBalance(value, additional);
+                } else {
+                    this.setBalance(value);
+                }
+            } else {
+                console.log("Nao pode depositar");
+            }
+        }
+    };
+}

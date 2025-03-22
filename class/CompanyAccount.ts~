@@ -15,14 +15,4 @@ export class CompanyAccount extends DioAccount {
             }
         }
     };
-
-    protected setBalanceLoan = (value: number): void => {
-        if (this.validateStatus()) {
-            if (this.balance > 0) {
-                this.balance += value;
-            } else {
-                console.log("Você não pode fazer um empréstimo com o valor negativo!");
-            }
-        }
-    };
 }

@@ -28,7 +28,7 @@ export abstract class DioAccount {
         if (this.validateStatus()) {
             if (this.balance > 0) {
                 this.balance -= value;
-                console.log(`(-) Retirada de $${value} foi realizada com sucesso!`);
+                console.log(`\n(-) Retirada de $${value} foi realizada com sucesso!`);
             } else {
                 console.log(`Você não pode sacar seu saldo é: $${this.balance}, por favor realize um depósito!`);
             }
